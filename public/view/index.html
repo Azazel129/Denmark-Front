@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Головне меню</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .nav-link {
+            color: white !important;
+        }
+        .navbar {
+            background-color: #283593;
+        }
+        .content {
+            text-align: center;
+            padding: 20px;
+        }
+        .content img {
+            max-width: 100%;
+            height: auto;
+        }
+        .footer {
+            background-color: #283593;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer img {
+            max-width: 50px;
+            height: auto;
+        }
+        .nav-tabs .nav-link {
+            color: #000 !important;
+        }
+        .nav-tabs .nav-link.active {
+            color: #007bff !important;
+            background-color: #f8f9fa !important;
+            border-color: #dee2e6 #dee2e6 #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand text-white" href="#">Головне меню</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/view/index.html">Головне меню</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view/history.html">Історія Данії</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view/facts.html">Цікаві факти</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/view/histroyMonach.html">Історія монархів Данії</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-toggle="modal" data-target="#authModal">Авторизація</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content">
+        <img src="/images/1.png" alt="Данія">
+        <p>Данія часто посідає перші місця у рейтингах найщасливіших країн світу завдяки високому рівню життя, соціальній підтримці та балансу між роботою і особистим життям.</p>
+        <p>Перший у світі парк розваг Леголенд відкрився у місті Біллунд у 1968 році, поруч з фабрикою, де були створені знамениті конструктори LEGO.</p>
+    </div>
+
+    <div class="footer">
+        <div class="row">
+            <div class="col-6 text-left">
+                <img src="/images/garb.png" alt="Left Footer Image">
+            </div>
+            <div class="col-6 text-right">
+                <img src="/images/flag.png" alt="Right Footer Image">
+            </div>
+        </div>
+    </div>
+
+    <!-- Auth Modal -->
+    <div class="modal fade" id="authModal" tabindex="-1" role="dialog" aria-labelledby="authModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="authModalLabel">Авторизація/Реєстрація</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" id="authTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Авторизація</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Реєстрація</a>
+                        </li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                            <form id="loginForm">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" style="margin-top: 20px;" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                        <!-- Форма входу замінена кнопкою переходу в адмін панель -->
+                                        <button onclick="window.location.href='http://127.0.0.1:8000/admin';" class="btn btn-primary">Перейти до адмін панелі</button>
+                                    </div>
+                                </div>
+                                
+                            </form>
+                        </div>
+                        <div class="tab-pane" id="register" role="tabpanel" aria-labelledby="register-tab">
+                            <form id="registerForm">
+                                <div class="form-group">
+                                    <label for="registerName">Логін</label>
+                                    <input type="text" class="form-control" id="registerName" placeholder="Введіть логін">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerEmail">Email адреса</label>
+                                    <input type="email" class="form-control" id="registerEmail" placeholder="Введіть email">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPassword">Пароль</label>
+                                    <input type="password" class="form-control" id="registerPassword" placeholder="Пароль">
+                                </div>
+                                <div class="form-group">
+                                    <label for="registerPasswordConfirm">Підтвердження пароля</label>
+                                    <input type="password" class="form-control" id="registerPasswordConfirm" placeholder="Підтвердження пароля">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Зареєструватися</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
